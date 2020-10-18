@@ -40,3 +40,8 @@ h1,h2,h3,h4,h5,h6 {
 	flex-basis: 25%;
 	
 }
+.officerHeader,.officerList {
+	text-align: center;
+	background-color: darkgoldenrod;
+	color: darkblue;
+}
