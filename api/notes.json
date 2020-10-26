@@ -1,3 +1,44 @@
 {
-    "notes": []
+  "notes": [
+    {
+      "dateOfInterview": "2020-10-23",
+      "timestamp": 1603385521409,
+      "author": "Sanjeet",
+      "suspect": "Fox",
+      "note": "He is a fox.",
+      "id": 1
+    },
+    {
+      "dateOfInterview": "2020-10-14",
+      "timestamp": 1603732165109,
+      "author": "Benj",
+      "suspect": "sanjeet",
+      "note": "ok ok",
+      "id": 2
+    },
+    {
+      "dateOfInterview": "2020-10-14",
+      "timestamp": 1603732169050,
+      "author": "Benj",
+      "suspect": "sanjeet",
+      "note": "ok ok",
+      "id": 3
+    },
+    {
+      "dateOfInterview": "",
+      "timestamp": 1603732477515,
+      "author": "",
+      "suspect": "",
+      "note": "",
+      "id": 4
+    },
+    {
+      "dateOfInterview": "2020-10-22",
+      "timestamp": 1603732511454,
+      "author": "Raja",
+      "suspect": "Baja",
+      "note": "done done....",
+      "id": 5
+    }
+  ]
 }
