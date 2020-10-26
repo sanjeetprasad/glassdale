@@ -1,7 +1,7 @@
 const eventHub = document.querySelector(".container")
 export const Criminal = (criminalObj) => {
     return `
-    <div class= "criminal__card">
+    <div id="criminal-${criminalObj.id}", class="criminal__card">
     <h2 class="name">${criminalObj.name}</h2>
     <p>Age: ${criminalObj.age}</p>
     <p>Crime: ${criminalObj.conviction}</p>
@@ -12,20 +12,20 @@ export const Criminal = (criminalObj) => {
     `
 }
 
-// eventHub.addEventListener("click", (eventObj) =>{
+eventHub.addEventListener("click", (eventObj) =>{
 
-//     const [nameOfId, criminalId] = eventObj.target.id.split("--")
-//     console.log("button was click" nameOfId, criminalId)
+    const [nameOfId, criminalId] = eventObj.target.id.split("--")
+    
 
-//     if(eventObj.target.id.startWith("associates--")) {
-//         console.log("button was click", nameOfId, criminalId )
+    if(eventObj.target.id.startsWith("associates--")) {
+        console.log("button was click", nameOfId, criminalId )
 
-//         const myCustomEvent = new CustomEvent("alibiButtonClicked", {
-//             detail: {
-//                 crimainalId: criminalId
-//             }
-//         })
-//         //dispatch the event to the eventHub so that the other modules can listen for this event
-//         eventHub.dispatchEvent(myCustomEvent)
-//     }
-// })
+        const myCustomEvent = new CustomEvent("alibiButtonClicked", {
+            detail: {
+                criminalId: criminalId
+            }
+        })
+        //dispatch the event to the eventHub so that the other modules can listen for this event
+        eventHub.dispatchEvent(myCustomEvent)
+    }
+})
