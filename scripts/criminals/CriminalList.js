@@ -2,7 +2,7 @@ import { getCriminals, useCriminals } from './CriminalProvider.js'
 import {Criminal} from "./Criminal.js"
 import { useConvictions } from '../convictions/ConvictionProvider.js'
 
-const criminalContainer = document.querySelector(".criminalsContainer")
+const criminalContainer = document.querySelector(".caseDataContainer")
 const eventHub = document.querySelector(".container")
 // console.log(eventHub)
 export const CriminalList = () => {

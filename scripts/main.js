@@ -11,6 +11,8 @@ import { OfficerSelect } from "./officers/OfficerSelect.js"
 import { NoteList } from "./notes/NoteList.js"
 import { NoteForm } from "./notes/NoteForm.js"
 import "./criminals/AlibiList.js"
+import { renderWitnessButton } from "./witnesses/WitnessStmntButton.js";
+import "./witnesses/WitnessStmntList.js";
 // import {AlibiList} from "./criminals/AlibiList.js"
 
 
@@ -23,7 +25,10 @@ OfficerSelect()
 NoteList()
 NoteForm()
 
+
 // AlibiList()
+
+renderWitnessButton()
 
 
 

@@ -31,7 +31,7 @@ h1,h2,h3,h4,h5,h6 {
 	
 }
 
-.criminal__card {
+.criminal__card, .witness {
 	background-color: darkgoldenrod;
 	color: darkblue;
 	border: 1px dotted black;
