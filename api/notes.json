@@ -1,52 +1,12 @@
 {
   "notes": [
     {
-      "dateOfInterview": "2020-10-23",
-      "timestamp": 1603385521409,
+      "dateOfInterview": "2020-11-09",
+      "timestamp": 1604944692349,
       "author": "Sanjeet",
-      "suspect": "Fox",
-      "note": "He is a fox.",
+      "criminalId": 1,
+      "note": "He did it.",
       "id": 1
-    },
-    {
-      "dateOfInterview": "2020-10-14",
-      "timestamp": 1603732165109,
-      "author": "Benj",
-      "suspect": "sanjeet",
-      "note": "ok ok",
-      "id": 2
-    },
-    {
-      "dateOfInterview": "2020-10-14",
-      "timestamp": 1603732169050,
-      "author": "Benj",
-      "suspect": "sanjeet",
-      "note": "ok ok",
-      "id": 3
-    },
-    {
-      "dateOfInterview": "",
-      "timestamp": 1603732477515,
-      "author": "",
-      "suspect": "",
-      "note": "",
-      "id": 4
-    },
-    {
-      "dateOfInterview": "2020-10-22",
-      "timestamp": 1603732511454,
-      "author": "Raja",
-      "suspect": "Baja",
-      "note": "done done....",
-      "id": 5
-    },
-    {
-      "dateOfInterview": "2020-10-20",
-      "timestamp": 1603736104372,
-      "author": "Kent",
-      "suspect": "sanje",
-      "note": "he not good",
-      "id": 6
     }
   ]
 }
