@@ -1,18 +1,55 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import {Criminal} from "./Criminal.js"
 import { useConvictions } from '../convictions/ConvictionProvider.js'
+import { getFacilities, useFacilities } from '../facility/FacilityProvider.js'
+import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js'
 
-const criminalContainer = document.querySelector(".caseDataContainer")
+
 const eventHub = document.querySelector(".container")
 // console.log(eventHub)
+
 export const CriminalList = () => {
     getCriminals()
+    .then(getFacilities)
+    .then(getCriminalFacilities)
     .then( () => {
         const criminalArray = useCriminals()
+
+        const facilities = useFacilities()
+        const criminalFacilities = useCriminalFacilities()
         
-        render(criminalArray)
+        render(criminalArray, facilities, criminalFacilities)
     })
 } 
+
+const render = (criminalsToRender, allFacilities, allRelationships) => {
+    
+    // Step 1 - Iterate all criminals
+    const criminalContainer = document.querySelector(".caseDataContainer")
+    const matchedFacilities = criminalsToRender.map((criminalObject) => {
+            // Step 2 - Filter all relationships to get only ones for this criminal
+            const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+
+            // Step 3 - Convert the relationships to facilities with map()
+            const facilities = facilityRelationshipsForThisCriminal.map(cf => {
+                const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+                return matchingFacilityObject
+            })
+
+            // Must pass the matching facilities to the Criminal component
+            return Criminal(criminalObject, facilities)
+        }
+    ).join("")
+    criminalContainer.innerHTML = `
+    <h1 class="header">Criminals of Glassdale</h1>
+   <section class = "criminalList">
+    ${matchedFacilities}
+   </section>
+
+`
+}
+
+
 
 
 // Listen for the custom event you dispatched in convictionSeclect
@@ -76,20 +113,20 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
 
 })
 
-const render = (criminalsArray) => {
-    let criminalsHTMLRepresentation = ""
+// const render = (criminalsArray) => {
+//     let criminalsHTMLRepresentation = ""
 
-    for (const criminal of criminalsArray) {
-        criminalsHTMLRepresentation += Criminal(criminal)
+//     for (const criminal of criminalsArray) {
+//         criminalsHTMLRepresentation += Criminal(criminal)
 
-        criminalContainer.innerHTML = `
-        <h1 class="header">Criminals of Glassdale</h1>
-        <section class= "criminalList">
-           ${criminalsHTMLRepresentation}
-        </section>
-        `
-    }
+//         criminalContainer.innerHTML = `
+//         <h1 class="header">Criminals of Glassdale</h1>
+//         <section class= "criminalList">
+//            ${criminalsHTMLRepresentation}
+//         </section>
+//         `
+//     }
 
-}
+// }
 
 
