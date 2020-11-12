@@ -13,7 +13,9 @@ import { NoteForm } from "./notes/NoteForm.js"
 import "./criminals/AlibiList.js"
 import { renderWitnessButton } from "./witnesses/WitnessStmntButton.js";
 import "./witnesses/WitnessStmntList.js";
+import { renderFacilityButton } from "./facility/DisplayFacilitiesButton.js"
 // import {AlibiList} from "./criminals/AlibiList.js"
+import "./facility/FacilityList.js"
 
 
 
@@ -30,6 +32,7 @@ NoteForm()
 // AlibiList()
 
 renderWitnessButton()
+renderFacilityButton()
 
 
 

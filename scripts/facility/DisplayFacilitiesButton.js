@@ -1,19 +1,18 @@
-const contentTarget = document.querySelector(".facilities__witnesses")
+const contentTarget = document.querySelector(".buttons__facilities")
 const eventHub = document.querySelector(".container")
 
-export const renderWitnessButton = () => {
+export const renderFacilityButton = () => {
     contentTarget.innerHTML = `
-    <button id="display-witnesses-button">Witness Statements</button>
+    <button id="display-facilities-button"> List Of Facilities</button>
     `
 }
 
 eventHub.addEventListener("click", (clickEvent) => {
-    if (clickEvent.target.id === "display-witnesses-button") {
-        // console.log("witness statement button was clicked")
+    if (clickEvent.target.id === "display-facilities-button") {
+        
+        const facilityButtonClicked = new CustomEvent("facilityButtonClicked")
 
-        const witnessButtonClicked = new CustomEvent("witnessesClicked")
-
-        eventHub.dispatchEvent(witnessButtonClicked)
+        eventHub.dispatchEvent(facilityButtonClicked)
     }
     
 })
