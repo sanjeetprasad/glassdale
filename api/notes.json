@@ -7,7 +7,22 @@
       "criminalId": 1,
       "note": "He did it.",
       "id": 1
+    },
+    {
+      "dateOfInterview": "2020-11-12",
+      "timestamp": 1605198375253,
+      "author": "Sanjeet",
+      "criminalId": 6,
+      "note": "I am not sure of his act.",
+      "id": 2
+    },
+    {
+      "dateOfInterview": "2020-11-12",
+      "timestamp": 1605201755711,
+      "author": "Alice",
+      "criminalId": 8,
+      "note": "Looks good!!!",
+      "id": 3
     }
   ]
-
 }
